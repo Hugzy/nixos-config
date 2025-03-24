@@ -8,7 +8,12 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./gc.nix
+      ./software/fish.nix
+      #./software/nvim.nix
     ];
+
+
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -17,6 +22,8 @@
   boot.initrd.luks.devices."luks-2ecd7276-d4a8-4324-ab9c-ca12e8f99dc4".device = "/dev/disk/by-uuid/2ecd7276-d4a8-4324-ab9c-ca12e8f99dc4";
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -88,10 +95,14 @@
     isNormalUser = true;
     description = "magida";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
   };
+
+  #fonts.packages = [ ... ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts)
+  fonts.packages = [
+    pkgs.nerd-fonts.recursive-mono
+    pkgs.nerd-fonts.symbols-only
+    pkgs.nerd-fonts.meslo-lg
+  ];
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -110,6 +121,9 @@
     fish
     lf
     brave
+    xclip
+    unzip
+    fishPlugins.tide
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -138,5 +152,8 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
+
+
+
 
 }
