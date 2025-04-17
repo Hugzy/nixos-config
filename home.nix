@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, stable, ... }:
 {
   imports = [
     ./software/go.nix
