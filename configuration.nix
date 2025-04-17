@@ -20,7 +20,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-2ecd7276-d4a8-4324-ab9c-ca12e8f99dc4".device = "/dev/disk/by-uuid/2ecd7276-d4a8-4324-ab9c-ca12e8f99dc4";
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "magida-work-laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -120,10 +120,10 @@
     git
     fish
     lf
-    brave
     xclip
     unzip
     fishPlugins.tide
+    bat
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

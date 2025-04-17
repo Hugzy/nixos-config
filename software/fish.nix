@@ -13,5 +13,6 @@
 
   programs.fish.shellAliases = {
       v = "nvim";
+      k = "kubectl";
   };
 }

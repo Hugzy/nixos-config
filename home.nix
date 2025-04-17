@@ -10,9 +10,15 @@
   home.username = "magida";
 
   home.packages = with pkgs; [
-    btop
-    #gcc
+    btop # replacement of htop/nmon
+    iotop # io monitoring
+    iftop # network monitoring
+    neofetch
     ripgrep
+    postman
+    kubectl
+    azure-cli
+    lens
   ];
 
   # basic configuration of git, please change to your own
