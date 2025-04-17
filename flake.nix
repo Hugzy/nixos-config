@@ -12,10 +12,10 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
-    nixosConfigurations.magida-work-laptop= nixpkgs.lib.nixosSystem {
+    nixosConfigurations.magida-work-laptop = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./configuration.nix
+        ./home-work-laptop.nix
         ./home-manager-module.nix
       ];
     };
