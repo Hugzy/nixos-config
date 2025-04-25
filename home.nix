@@ -19,6 +19,7 @@
     kubectl
     azure-cli
     lens
+    flameshot
   ];
 
   # basic configuration of git, please change to your own
