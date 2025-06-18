@@ -18,11 +18,20 @@
         stable = stablePkgs;
       };
   in {
-    nixosConfigurations.magida-work-laptop= nixpkgs.lib.nixosSystem {
+    nixosConfigurations.magida-work-laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = allPkgs;
       modules = [
         ./home-work-laptop.nix
+        ./home-manager-module.nix
+      ];
+    };
+
+    nixosConfigurations.work-desktop = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = allPkgs;
+      modules = [
+        ./work-desktop.nix
         ./home-manager-module.nix
       ];
     };

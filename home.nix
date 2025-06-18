@@ -7,7 +7,8 @@
     ./software/dotnet.nix
   ];
 
-  home.username = "magida";
+  home.username = "frederikhm";
+  home.homeDirectory = "/home/frederikhm";
 
   home.packages = with pkgs; [
     btop # replacement of htop/nmon
