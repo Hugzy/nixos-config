@@ -10,6 +10,7 @@
       #./hardware/work-laptop.nix
       ./gc.nix
       ./software/fish.nix
+      ./software/docker.nix
       #./software/nvim.nix
     ];
 
@@ -66,6 +67,7 @@
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -79,7 +81,7 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-  #hardware.bluetooth.enable = true; # enables support for Bluetooth
+
   #hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -111,13 +113,15 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    alacritty
     neovim
     wget
     google-chrome
     git
     fish
     lf
-    xclip
+    #xclip
+    wl-clipboard
     unzip
     bat
     kdePackages.kate
