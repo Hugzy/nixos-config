@@ -21,6 +21,7 @@
     azure-cli
     lens
     flameshot
+    jetbrains.datagrip
   ];
 
   # basic configuration of git, please change to your own
