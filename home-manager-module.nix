@@ -9,7 +9,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             # I would put this elsewhere
-            users.magida = import ./home.nix;
+            users.frederikhm= import ./home.nix;
             extraSpecialArgs = {
                 inherit stable;
             };

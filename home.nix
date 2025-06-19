@@ -38,7 +38,22 @@
     };
   };
 
-  home.stateVersion = "24.11";
+  programs.starship = {
+    enable = true;
+    # Configuration written to ~/.config/starship.toml
+    settings = {
+      # add_newline = false;
+
+      # character = {
+      #   success_symbol = "[➜](bold green)";
+      #   error_symbol = "[➜](bold red)";
+      # };
+
+      # package.disabled = true;
+    };
+  };
+
+  home.stateVersion = "25.05";
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

@@ -98,6 +98,7 @@
     pkgs.nerd-fonts.recursive-mono
     pkgs.nerd-fonts.symbols-only
     pkgs.nerd-fonts.meslo-lg
+    pkgs.nerd-fonts.fira-code
   ];
 
   # Install firefox.
@@ -110,8 +111,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
     neovim
+    wget
     google-chrome
     git
     fish
@@ -120,6 +121,7 @@
     unzip
     bat
     kdePackages.kate
+    fzf
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
