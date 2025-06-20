@@ -1,4 +1,7 @@
 { pkgs, stable, ... }:
+let
+  onePassPath = "/home/frederikhm/.1password/agent.sock";
+in 
 {
   imports = [
     ./software/go.nix

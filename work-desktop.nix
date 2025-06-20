@@ -16,6 +16,7 @@ in {
   environment.systemPackages = with pkgs;
     [
       jq
+      kubernetes-helm
     ] ++ [ pulumi ];
 
   networking.hostName = "work-desktop";
