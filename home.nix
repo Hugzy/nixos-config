@@ -8,6 +8,7 @@ in
     ./software/javascript.nix
     ./software/rust.nix
     ./software/dotnet.nix
+    ./software/nvim.nix
   ];
 
   home.username = "frederikhm";
