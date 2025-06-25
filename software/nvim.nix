@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 {
-  programs.neovim.enable = true;
+
   programs.neovim = {
     extraPackages = with pkgs; [
       # LazyVim

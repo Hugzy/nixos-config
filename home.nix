@@ -8,7 +8,8 @@ in
     ./software/javascript.nix
     ./software/rust.nix
     ./software/dotnet.nix
-    ./software/nvim.nix
+    # ./software/nvim.nix
+    ./software/tmux.nix
   ];
 
   home.username = "frederikhm";
