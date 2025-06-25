@@ -10,6 +10,8 @@ in
     ./software/dotnet.nix
     # ./software/nvim.nix
     ./software/tmux.nix
+    ./software/alacritty.nix
+    
   ];
 
   home.username = "frederikhm";
