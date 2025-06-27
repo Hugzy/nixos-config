@@ -4,13 +4,14 @@
   inputs = {
     stableNixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixCats.url = "github:BirdeeHub/nixCats-nvim";
     home-manager = {
         url = "github:nix-community/home-manager";
         inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, stableNixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, stableNixpkgs, nixCats, ... }@inputs:
   let
     stablePkgs = import stableNixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
       #pkgs = nixpkgs.legacyPackages.${system};

@@ -11,7 +11,6 @@ in
     # ./software/nvim.nix
     ./software/tmux.nix
     ./software/alacritty.nix
-    
   ];
 
   home.username = "frederikhm";
@@ -29,6 +28,7 @@ in
     lens
     flameshot
     jetbrains.datagrip
+    jetbrains.rider
   ];
 
   # basic configuration of git, please change to your own
