@@ -29,6 +29,7 @@ in
     flameshot
     jetbrains.datagrip
     jetbrains.rider
+    jetbrains.webstorm
   ];
 
   # basic configuration of git, please change to your own
