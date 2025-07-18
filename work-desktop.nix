@@ -28,6 +28,7 @@ in {
     [
       jq
       kubernetes-helm
+      brave
     ] ++ [ pulumi ];
 
   networking.hostName = "work-desktop";
