@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, stable, lib, ... }:
 
 let
   # Don't install the individual provider packages as we install them directly
@@ -29,6 +29,7 @@ in {
       jq
       kubernetes-helm
       brave
+      claude-code
     ] ++ [ pulumi ];
 
   networking.hostName = "work-desktop";

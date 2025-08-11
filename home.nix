@@ -11,6 +11,7 @@ in
     # ./software/nvim.nix
     ./software/tmux.nix
     ./software/alacritty.nix
+    ./software/llm.nix
   ];
 
   home.username = "frederikhm";
