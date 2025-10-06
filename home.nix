@@ -31,6 +31,8 @@ in
     jetbrains.datagrip
     jetbrains.rider
     jetbrains.webstorm
+    jetbrains.rust-rover
+    remmina
   ];
 
   # basic configuration of git, please change to your own
