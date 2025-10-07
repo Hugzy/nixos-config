@@ -28,11 +28,8 @@ in
     azure-cli
     lens
     flameshot
-    jetbrains.datagrip
-    jetbrains.rider
-    jetbrains.webstorm
-    jetbrains.rust-rover
-    remmina
+    obs-studio
+    vlc
   ];
 
   # basic configuration of git, please change to your own

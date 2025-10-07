@@ -30,6 +30,11 @@ in {
       kubernetes-helm
       brave
       claude-code
+      jetbrains.datagrip
+      jetbrains.rider
+      jetbrains.webstorm
+      jetbrains.rust-rover
+      remmina
     ] ++ [ pulumi ];
 
   networking.hostName = "work-desktop";
