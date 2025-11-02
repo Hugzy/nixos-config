@@ -3,7 +3,7 @@
 
   inputs = {
     stableNixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05"; #"github:nixos/nixpkgs/nixos-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
     home-manager = {
         url = "github:nix-community/home-manager";
@@ -33,6 +33,15 @@
       specialArgs = allPkgs;
       modules = [
         ./work-desktop.nix
+        ./home-manager-module.nix
+      ];
+    };
+
+    nixosConfigurations.home-desktop = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = allPkgs;
+      modules = [
+        ./home-desktop.nix
         ./home-manager-module.nix
       ];
     };
