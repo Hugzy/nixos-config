@@ -3,6 +3,7 @@
   imports = [
     ./hardware/home-desktop.nix
     ./configuration.nix
+    ./software/ghostty.nix
   ];
 
   services.interception-tools = {
@@ -21,6 +22,8 @@
       jq
       brave
       claude-code
+      discord
+      ghostty
     ];
 
   networking.hostName = "home-desktop";
