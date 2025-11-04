@@ -8,8 +8,8 @@
 	font-style = "regular";
 	font-size = 18.00;
 	background-opacity = 0.85;
-	background-opacity-cells = true;
-	initial-commnand = "${pkgs.tmux}/bin/tmux new-session -A -D -s main"
+	#background-opacity-cells = true;
+	initial-command = "${pkgs.tmux}/bin/tmux new-session -A -D -s main";
 	};
     };
 }
