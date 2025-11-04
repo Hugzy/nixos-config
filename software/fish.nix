@@ -15,4 +15,5 @@
       v = "nvim";
       k = "kubectl";
   };
+  programs.fish.interactiveShellInit = "starship init fish | source";
 }

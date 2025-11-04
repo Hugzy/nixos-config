@@ -4,7 +4,7 @@
   programs.starship = {
     enable = true;
     settings = {
-      format = "$all$character";
+      format = "$directory$git_branch$git_status$golang$dotnet$nix_shell$kubernetes$docker_context$character";
       add_newline = false;
       
       character = {
@@ -17,11 +17,13 @@
         truncation_length = 3;
         truncate_to_repo = true;
         style = "bold cyan";
+        format = "[$path]($style) ";
       };
 
       git_branch = {
         symbol = " ";
         style = "bold purple";
+        format = "[$symbol$branch]($style) ";
       };
 
       git_status = {
@@ -29,49 +31,42 @@
         diverged = "⇕⇡\${ahead_count}⇣\${behind_count}";
         behind = "⇣\${count}";
         deleted = "x";
-      };
-
-      nodejs = {
-        symbol = " ";
-        style = "bold green";
-      };
-
-      rust = {
-        symbol = " ";
+        modified = "!";
+        untracked = "?";
+        staged = "+";
+        format = "[$all_status$ahead_behind]($style) ";
         style = "bold red";
       };
 
       golang = {
         symbol = " ";
         style = "bold cyan";
+        format = "[$symbol($version)]($style) ";
       };
 
-      python = {
-        symbol = " ";
-        style = "bold yellow";
-      };
-
-      docker_context = {
+      dotnet = {
         symbol = " ";
         style = "bold blue";
+        format = "[$symbol($version)]($style) ";
+      };
+
+      nix_shell = {
+        symbol = " ";
+        style = "bold blue";
+        format = "[$symbol$state]($style) ";
       };
 
       kubernetes = {
         disabled = false;
         symbol = "☸ ";
         style = "bold blue";
+        format = "[$symbol$context( \\($namespace\\))]($style) ";
       };
 
-      time = {
-        disabled = false;
-        format = "[$time]($style) ";
-        style = "bold yellow";
-        time_format = "%H:%M";
-      };
-
-      cmd_duration = {
-        min_time = 2000;
-        format = "took [$duration](bold yellow)";
+      docker_context = {
+        symbol = " ";
+        style = "bold blue";
+        format = "[$symbol$context]($style) ";
       };
     };
   };
