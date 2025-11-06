@@ -31,6 +31,7 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Copenhagen";
+  time.hardwareClockInLocalTime = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_DK.UTF-8";
@@ -103,6 +104,8 @@
     pkgs.nerd-fonts.symbols-only
     pkgs.nerd-fonts.meslo-lg
     pkgs.nerd-fonts.fira-code
+    pkgs.nerd-fonts.jetbrains-mono
+    pkgs.nerd-fonts.symbols-only
   ];
 
   # Install firefox.
@@ -129,7 +132,17 @@
     bat
     kdePackages.kate
     fzf
+    kitty
+    rofi
+    waybar
+    hyprshot
+    swaynotificationcenter
+    libnotify
+    hyprlock
+    hypridle
   ];
+
+  programs.hyprland.enable = true;
 
   # Set neovim as the default editor
   environment.variables.EDITOR = "nvim";
