@@ -19,6 +19,12 @@ in
   home.username = "frederikhm";
   home.homeDirectory = "/home/frederikhm";
 
+  #Should be able to reference hyprland dotfile without using nix configuration with this
+  #home.file."${config.xdg.configHome}/hypr" = {
+    #source = ../dotfiles/hypr;
+    #recursive = true;
+  #};
+
   home.packages = with pkgs; [
     btop # replacement of htop/nmon
     iotop # io monitoring

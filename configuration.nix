@@ -140,6 +140,7 @@
     libnotify
     hyprlock
     hypridle
+    hyprpaper
   ];
 
   programs.hyprland.enable = true;
