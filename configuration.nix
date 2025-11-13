@@ -133,7 +133,7 @@
     kdePackages.kate
     fzf
     kitty
-    rofi
+    wofi
     waybar
     hyprshot
     swaynotificationcenter
@@ -141,6 +141,7 @@
     hyprlock
     hypridle
     hyprpaper
+    hyprsunset
   ];
 
   programs.hyprland.enable = true;

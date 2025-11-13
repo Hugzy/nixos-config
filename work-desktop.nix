@@ -1,4 +1,4 @@
-{ pkgs, stable, lib, ... }:
+{ pkgs, lib, ... }:
 
 let
   # Don't install the individual provider packages as we install them directly

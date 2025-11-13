@@ -6,36 +6,12 @@
     settings = {
       "$schema" = "https://starship.rs/config-schema.json";
       
-      format = ''
-        [](surface0)\
-        $os\
-        $username\
-        [](bg:peach fg:surface0)\
-        $directory\
-        [](fg:peach bg:green)\
-        $git_branch\
-        $git_status\
-        [](fg:green bg:teal)\
-        $c\
-        $rust\
-        $golang\
-        $nodejs\
-        $php\
-        $java\
-        $kotlin\
-        $haskell\
-        $python\
-        [](fg:teal bg:blue)\
-        $docker_context\
-        [](fg:blue bg:purple)\
-        $time\
-        [ ](fg:purple)\
-        $line_break$character'';
+      format = "[](surface0)$os$username[](bg:peach fg:surface0)$directory[](fg:peach bg:green)$git_branch$git_status[](fg:green bg:teal)[](fg:teal bg:blue)$docker_context[](fg:blue bg:purple)$time[ ](fg:purple)$line_break$character";
 
       palette = "catppuccin_mocha";
 
       # Color palettes
-      "palettes.gruvbox_dark" = {
+      palettes.gruvbox_dark = {
         color_fg0 = "#fbf1c7";
         color_bg1 = "#3c3836";
         color_bg3 = "#665c54";
@@ -48,7 +24,7 @@
         color_yellow = "#d79921";
       };
 
-      "palettes.catppuccin_mocha" = {
+      palettes.catppuccin_mocha = {
         rosewater = "#f5e0dc";
         flamingo = "#f2cdcd";
         pink = "#f5c2e7";
@@ -81,6 +57,7 @@
       os = {
         disabled = false;
         style = "bg:surface0 fg:text";
+	format = "[$symbol]($style)";
         symbols = {
           Windows = "󰍲";
           Ubuntu = "󰕈";
@@ -109,7 +86,7 @@
         show_always = true;
         style_user = "bg:surface0 fg:text";
         style_root = "bg:surface0 fg:text";
-        format = "[ $user ]($style)";
+        format = "[$user ]($style)";
       };
 
       # Directory configuration
@@ -120,16 +97,16 @@
         truncation_symbol = "…/";
         substitutions = {
           Documents = "󰈙 ";
-          Downloads = " ";
+          Downloads = " ";
           Music = "󰝚 ";
-          Pictures = " ";
+          Pictures = " ";
           Developer = "󰲋 ";
         };
       };
 
       # Git branch
       git_branch = {
-        symbol = "";
+        symbol = "";
         style = "bg:teal";
         format = "[[ $symbol $branch ](fg:base bg:green)]($style)";
       };
@@ -140,64 +117,9 @@
         format = "[[($all_status$ahead_behind )](fg:base bg:green)]($style)";
       };
 
-      # Programming languages
-      nodejs = {
-        symbol = "";
-        style = "bg:teal";
-        format = "[[ $symbol( $version) ](fg:base bg:teal)]($style)";
-      };
-
-      c = {
-        symbol = " ";
-        style = "bg:teal";
-        format = "[[ $symbol( $version) ](fg:base bg:teal)]($style)";
-      };
-
-      rust = {
-        symbol = "";
-        style = "bg:teal";
-        format = "[[ $symbol( $version) ](fg:base bg:teal)]($style)";
-      };
-
-      golang = {
-        symbol = "";
-        style = "bg:teal";
-        format = "[[ $symbol( $version) ](fg:base bg:teal)]($style)";
-      };
-
-      php = {
-        symbol = "";
-        style = "bg:teal";
-        format = "[[ $symbol( $version) ](fg:base bg:teal)]($style)";
-      };
-
-      java = {
-        symbol = " ";
-        style = "bg:teal";
-        format = "[[ $symbol( $version) ](fg:base bg:teal)]($style)";
-      };
-
-      kotlin = {
-        symbol = "";
-        style = "bg:teal";
-        format = "[[ $symbol( $version) ](fg:base bg:teal)]($style)";
-      };
-
-      haskell = {
-        symbol = "";
-        style = "bg:teal";
-        format = "[[ $symbol( $version) ](fg:base bg:teal)]($style)";
-      };
-
-      python = {
-        symbol = "";
-        style = "bg:teal";
-        format = "[[ $symbol( $version) ](fg:base bg:teal)]($style)";
-      };
-
       # Docker context
       docker_context = {
-        symbol = "";
+        symbol = "";
         style = "bg:mantle";
         format = "[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)";
       };
@@ -207,7 +129,7 @@
         disabled = false;
         time_format = "%R";
         style = "bg:peach";
-        format = "[[  $time ](fg:mantle bg:purple)]($style)";
+        format = "[[  $time ](fg:mantle bg:purple)]($style)";
       };
 
       # Line break
@@ -218,12 +140,12 @@
       # Character prompt
       character = {
         disabled = false;
-        success_symbol = "[](bold fg:green)";
-        error_symbol = "[](bold fg:red)";
-        vimcmd_symbol = "[](bold fg:creen)";
-        vimcmd_replace_one_symbol = "[](bold fg:purple)";
-        vimcmd_replace_symbol = "[](bold fg:purple)";
-        vimcmd_visual_symbol = "[](bold fg:lavender)";
+        success_symbol = "[](bold fg:green)";
+        error_symbol = "[](bold fg:red)";
+        vimcmd_symbol = "[](bold fg:creen)";
+        vimcmd_replace_one_symbol = "[](bold fg:purple)";
+        vimcmd_replace_symbol = "[](bold fg:purple)";
+        vimcmd_visual_symbol = "[](bold fg:lavender)";
       };
     };
   };

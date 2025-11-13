@@ -1,4 +1,4 @@
-{lib, config, stable, home-manager, ...}:
+{lib, config, unstable, home-manager, neovim, ...}:
 {
    imports = [home-manager.nixosModules.default];
 
@@ -11,7 +11,8 @@
             # I would put this elsewhere
             users.frederikhm= import ./home.nix;
             extraSpecialArgs = {
-                inherit stable;
+                inherit unstable;
+                inherit neovim;
             };
         };
    };

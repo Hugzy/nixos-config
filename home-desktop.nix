@@ -1,5 +1,9 @@
-{ pkgs, stable, lib, ... }:
 {
+  pkgs,
+  unstable,
+  lib,
+  ...
+}: {
   imports = [
     ./hardware/home-desktop.nix
     ./configuration.nix
@@ -17,16 +21,16 @@
     '';
   };
 
-  environment.systemPackages = with stable;
-    [
-      jq
-      brave
-      claude-code
-      discord
-    ];
+  programs.yazi.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    jq
+    brave
+    claude-code
+    discord
+  ];
 
   networking.hostName = "home-desktop";
 
   use-home-manager.enable = true;
-
 }

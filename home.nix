@@ -1,4 +1,4 @@
-{ pkgs, stable, ... }:
+{ pkgs, neovim, ... }:
 let
   onePassPath = "/home/frederikhm/.1password/agent.sock";
 in 
@@ -26,6 +26,7 @@ in
   #};
 
   home.packages = with pkgs; [
+    neovim.packages.${system}.default
     btop # replacement of htop/nmon
     iotop # io monitoring
     iftop # network monitoring
