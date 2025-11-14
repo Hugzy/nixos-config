@@ -3,11 +3,17 @@
   unstable,
   lib,
   ...
-}: {
+}: let
+  # Don't install the individual provider packages as we install them directly
+  # as part of our automation scripts.
+  pulumi = pkgs.pulumi-bin.overrideAttrs (finalAtrs: previousAttrs: {
+    srcs = lib.lists.take 1 previousAttrs.srcs;
+    postUnpack = "";
+  });
+in {
   imports = [
     ./hardware/home-desktop.nix
     ./configuration.nix
-    #./software/ghostty.nix
   ];
 
   services.interception-tools = {
@@ -23,12 +29,17 @@
 
   programs.yazi.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    jq
-    brave
-    claude-code
-    discord
-  ];
+  environment.systemPackages = with pkgs;
+    [
+      jq
+      brave
+      claude-code
+      discord
+      jetbrains.datagrip
+      jetbrains.rider
+      jetbrains.webstorm
+    ]
+    ++ [pulumi];
 
   networking.hostName = "home-desktop";
 
