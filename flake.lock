@@ -71,8 +71,6 @@
         "plugins-lze": "plugins-lze",
         "plugins-lzextras": "plugins-lzextras",
         "plugins-maximize-nvim": "plugins-maximize-nvim",
-        "plugins-neopyter": "plugins-neopyter",
-        "plugins-obsidian-nvim": "plugins-obsidian-nvim",
         "plugins-possession-nvim": "plugins-possession-nvim",
         "plugins-reactive-nvim": "plugins-reactive-nvim",
         "plugins-symbol-usage-nvim": "plugins-symbol-usage-nvim",
@@ -81,11 +79,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1763070598,
-        "narHash": "sha256-SOOQyXj0rWhsQTlxlF1Jw+72ehJhuJv2Tfs31O1W7TI=",
+        "lastModified": 1763328449,
+        "narHash": "sha256-qZ+kUp0ZjeeWWbByJFR458bKoUC9C0TNAjJu71A+hm0=",
         "owner": "Hugzy",
         "repo": "neovim",
-        "rev": "e1cd2f0b0f2e38e3bce23031122d7532fd55d22e",
+        "rev": "afc11d855cbb2560a956c58de2d1b532c1a347a0",
         "type": "github"
       },
       "original": {
@@ -234,38 +232,6 @@
       "original": {
         "owner": "declancm",
         "repo": "maximize.nvim",
-        "type": "github"
-      }
-    },
-    "plugins-neopyter": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1751975980,
-        "narHash": "sha256-KGR5DEJjhWUB0CQyYzWpuFdhwg8WS/OKCoXFj4MDv/8=",
-        "owner": "SUSTech-data",
-        "repo": "neopyter",
-        "rev": "438d329d5533edde86f83688c6176b53620eb09d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "SUSTech-data",
-        "repo": "neopyter",
-        "type": "github"
-      }
-    },
-    "plugins-obsidian-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1752850717,
-        "narHash": "sha256-8jAuVEYdIcoiZM9rjm0g68AtYNW/x9m2lZFvoG+WO8s=",
-        "owner": "obsidian-nvim",
-        "repo": "obsidian.nvim",
-        "rev": "d4185a14aa923b365846c26eaa122abab41e83b1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "obsidian-nvim",
-        "repo": "obsidian.nvim",
         "type": "github"
       }
     },
