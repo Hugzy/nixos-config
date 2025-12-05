@@ -13,6 +13,26 @@
       # Enable mouse control (clickable windows, panes, resizable panes)
       set -g mouse on
 
+      # vim-style pane navigation
+      bind h select-pane -L
+      bind j select-pane -D
+      bind k select-pane -U
+      bind l select-pane -R
+
+      # vim-style pane resizing
+      bind H resize-pane -L 5
+      bind J resize-pane -D 5
+      bind K resize-pane -U 5
+      bind L resize-pane -R 5
+
+      # Nordic keyboard friendly copy mode (using ø which is easily accessible)
+      bind ø copy-mode
+      
+      # Enable vi-style key bindings in copy mode
+      setw -g mode-keys vi
+      bind-key -T copy-mode-vi v send-keys -X begin-selection
+      bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+
       # https://old.reddit.com/r/tmux/comments/mesrci/tmux_2_doesnt_seem_to_use_256_colors/
       #set -g default-terminal "xterm-256color"
       #set -ga terminal-overrides ",*256col*:Tc"
