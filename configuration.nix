@@ -1,18 +1,19 @@
 # Edjt this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      #./hardware/work-laptop.nix
-      ./gc.nix
-      ./software/fish.nix
-      ./software/docker.nix
-      ./software/tailscale.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    #./hardware/work-laptop.nix
+    ./gc.nix
+    ./software/fish.nix
+    ./software/docker.nix
+    ./software/tailscale.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -94,9 +95,8 @@
   users.users.frederikhm = {
     isNormalUser = true;
     description = "frederikhm";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
   };
-
 
   #fonts.packages = [ ... ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts)
   fonts.packages = [
@@ -119,29 +119,16 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #neovim
     wget
-    google-chrome
     git
-    fish
     lf
-    #xclip
     wl-clipboard
     unzip
     bat
     kdePackages.kate
     fzf
-    kitty
-    wofi
-    waybar
-    hyprshot
-    swaynotificationcenter
-    libnotify
-    hyprlock
-    hypridle
-    hyprpaper
-    hyprsunset
   ];
 
   programs.hyprland.enable = true;
@@ -154,7 +141,7 @@
     enable = true;
     # Certain features, including CLI integration and system authentication support,
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
-    polkitPolicyOwners = [ "frederikhm" ];
+    polkitPolicyOwners = ["frederikhm"];
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -175,8 +162,8 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-  
-   programs.nix-ld.enable = true;
+
+  programs.nix-ld.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

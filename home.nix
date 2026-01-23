@@ -1,8 +1,10 @@
-{ pkgs, neovim, ... }:
-let
-  onePassPath = "/home/frederikhm/.1password/agent.sock";
-in 
 {
+  pkgs,
+  neovim,
+  ...
+}: let
+  onePassPath = "/home/frederikhm/.1password/agent.sock";
+in {
   imports = [
     ./software/go.nix
     ./software/javascript.nix
@@ -14,6 +16,7 @@ in
     ./software/ghostty.nix
     ./software/llm.nix
     ./software/starship.nix
+    ./software/hypr.nix
   ];
 
   home.username = "frederikhm";
@@ -21,8 +24,8 @@ in
 
   #Should be able to reference hyprland dotfile without using nix configuration with this
   #home.file."${config.xdg.configHome}/hypr" = {
-    #source = ../dotfiles/hypr;
-    #recursive = true;
+  #source = ../dotfiles/hypr;
+  #recursive = true;
   #};
 
   home.packages = with pkgs; [
@@ -47,7 +50,7 @@ in
     userName = "Hugzy";
     userEmail = "frede.madsen3@gmail.com";
     extraConfig = {
-      push = { 
+      push = {
         autoSetupRemote = true;
       };
       pull = {
@@ -55,7 +58,6 @@ in
       };
     };
   };
-
 
   home.stateVersion = "25.05";
   # Let home Manager install and manage itself.
