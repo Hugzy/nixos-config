@@ -1,6 +1,8 @@
-{ pkgs, lib, ... }:
-
-let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   # Don't install the individual provider packages as we install them directly
   # as part of our automation scripts.
   pulumi = pkgs.pulumi-bin.overrideAttrs (finalAtrs: previousAttrs: {
@@ -23,7 +25,7 @@ in {
             EV_KEY: [KEY_CAPSLOCK, KEY_ESC]
     '';
   };
-
+  programs.yazi.enable = true;
   environment.systemPackages = with pkgs;
     [
       jq
@@ -35,7 +37,12 @@ in {
       jetbrains.webstorm
       jetbrains.rust-rover
       remmina
-    ] ++ [ pulumi ];
+      ssm-session-manager-plugin
+      packer
+      remmina
+      icu
+    ]
+    ++ [pulumi];
 
   networking.hostName = "work-desktop";
 

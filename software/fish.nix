@@ -15,5 +15,8 @@
       v = "nvim";
       k = "kubectl";
   };
-  programs.fish.interactiveShellInit = "starship init fish | source";
+  programs.fish.interactiveShellInit = ''
+    starship init fish | source
+    fish_add_path $HOME/.dotnet/tools
+  '';
 }

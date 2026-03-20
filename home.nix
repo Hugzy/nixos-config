@@ -17,6 +17,7 @@ in {
     ./software/llm.nix
     ./software/starship.nix
     ./software/hypr.nix
+    ./software/obsidian.nix
   ];
 
   home.username = "frederikhm";
@@ -42,6 +43,7 @@ in {
     flameshot
     obs-studio
     vlc
+    #obsidian
   ];
 
   # basic configuration of git, please change to your own
