@@ -9,5 +9,6 @@
     pkgs.hypridle
     pkgs.hyprpaper
     pkgs.hyprsunset
+    pkgs.wlogout
   ];
 }
