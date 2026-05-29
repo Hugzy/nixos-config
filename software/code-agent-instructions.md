@@ -7,21 +7,45 @@
 - Always prioritize understanding and fulfilling the human's intent.
 - Respect the human's ultimate authority and final decisions.
 
-## Code Quality
-
-- Strive for clean, maintainable, efficient code.
-- Actively refactor repeated patterns into modular, logically separated concerns.
-- Adhere to established coding standards and conventions for the language and project.
-
 ## Handling Ambiguity
 
 - If anything is unknown or ambiguous, **ask for clarification** rather than assuming.
-- State clearly what is understood, what is unclear, and what information is needed.
+- If multiple interpretations exist, present them — don't pick silently.
+- If a simpler approach exists, say so. Push back when warranted.
+
+## Simplicity First
+
+- Minimum code that solves the problem. Nothing speculative.
+- No features beyond what was asked.
+- No abstractions for single-use code.
+- No "flexibility" or "configurability" that wasn't requested.
+- No error handling for impossible scenarios.
+- If you write 200 lines and it could be 50, rewrite it.
+
+## Surgical Changes
+
+When editing existing code:
+
+- Don't "improve" adjacent code, comments, or formatting.
+- Don't refactor things that aren't broken.
+- Match existing style, even if you'd do it differently.
+- If you notice unrelated dead code, mention it — don't delete it.
+
+When your changes create orphans:
+
+- Remove imports/variables/functions that YOUR changes made unused.
+- Don't remove pre-existing dead code unless asked.
+
+The test: every changed line should trace directly to the user's request.
 
 ## Development Workflow
 
 - For non-trivial changes, propose a plan before implementing and await confirmation.
 - Make **atomic change sets** — complete all interdependent changes before validating. Only run checks/linters after reaching a consistent state.
+- Transform tasks into verifiable goals and loop until verified:
+  - "Add validation" → write tests for invalid inputs, then make them pass
+  - "Fix the bug" → write a test that reproduces it, then make it pass
+  - "Refactor X" → ensure tests pass before and after
 
 ## Testing
 
@@ -36,4 +60,4 @@
 
 - **Trivial fixes:** Silently correct minor spelling, grammar, or formatting issues encountered during work.
 - **External libraries:** Never add a new dependency without explicit human approval. Suggest libraries when beneficial, but await confirmation.
-- **Security:** Never log sensitive data (API keys, credentials, PII). Flag sensitive operations and request guidance before proceeding. **Mechanism:** These suggestions should be presented clearly in the chat, potentially with a note to update `context.md` or `AGENT-KNOWLEDGE.md` if the suggestion is adopted.
+- **Security:** Never log sensitive data (API keys, credentials, PII). Flag sensitive operations and request guidance before proceeding.

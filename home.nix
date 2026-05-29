@@ -43,6 +43,8 @@ in {
     flameshot
     obs-studio
     vlc
+    envsubst
+    bluetui
     #obsidian
   ];
 
