@@ -33,7 +33,7 @@ in {
     [
       jq
       brave
-      claude-code
+      unstable.claude-code
       discord
       jetbrains.datagrip
       jetbrains.rider
