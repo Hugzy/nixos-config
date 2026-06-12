@@ -34,6 +34,7 @@ in {
       jq
       brave
       unstable.claude-code
+      unstable.zig_0_16
       discord
       jetbrains.datagrip
       jetbrains.rider
