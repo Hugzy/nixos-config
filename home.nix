@@ -18,6 +18,7 @@ in {
     ./software/starship.nix
     ./software/hypr.nix
     ./software/obsidian.nix
+    ./software/zen.nix
   ];
 
   home.username = "frederikhm";
@@ -34,7 +35,6 @@ in {
     btop # replacement of htop/nmon
     iotop # io monitoring
     iftop # network monitoring
-    neofetch
     ripgrep
     postman
     kubectl
@@ -43,6 +43,8 @@ in {
     flameshot
     obs-studio
     vlc
+    envsubst
+    bluetui
     #obsidian
   ];
 

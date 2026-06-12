@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  unstable,
   ...
 }: let
   # Don't install the individual provider packages as we install them directly
@@ -31,7 +32,7 @@ in {
       jq
       kubernetes-helm
       brave
-      claude-code
+      unstable.claude-code
       jetbrains.datagrip
       jetbrains.rider
       jetbrains.webstorm
@@ -41,6 +42,9 @@ in {
       packer
       remmina
       icu
+      gh
+      flyctl
+      awscli2
     ]
     ++ [pulumi];
 
