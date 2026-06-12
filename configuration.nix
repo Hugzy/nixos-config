@@ -144,6 +144,16 @@
     polkitPolicyOwners = ["frederikhm"];
   };
 
+  # Zen is not a browser 1Password recognises out of the box, so it must be
+  # manually added to the list of browsers 1Password will communicate with.
+  # https://github.com/youwen5/zen-browser-flake (1Password integration)
+  environment.etc."1password/custom_allowed_browsers" = {
+    text = ''
+      zen
+    '';
+    mode = "0755";
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

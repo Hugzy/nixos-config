@@ -1,4 +1,4 @@
-{lib, config, unstable, home-manager, neovim, ...}:
+{lib, config, unstable, home-manager, neovim, zen-browser, ...}:
 {
    imports = [home-manager.nixosModules.default];
 
@@ -13,6 +13,7 @@
             extraSpecialArgs = {
                 inherit unstable;
                 inherit neovim;
+                inherit zen-browser;
             };
         };
    };
