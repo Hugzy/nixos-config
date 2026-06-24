@@ -14,6 +14,7 @@ in {
   imports = [
     ./hardware/work-desktop.nix
     ./configuration.nix
+    ./software/intune.nix
   ];
 
   services.interception-tools = {
