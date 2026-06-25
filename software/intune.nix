@@ -92,6 +92,15 @@
   services.intune.enable = true;
   xdg.portal.enable = true;
 
+  # Run periodic Intune check-ins so compliance status stays fresh.
+  # The package ships intune-agent.timer but doesn't enable it; wire it into
+  # the graphical session (fires ~5m after login, then hourly). asDropin keeps
+  # the package's [Timer] schedule instead of replacing the whole unit.
+  systemd.user.timers.intune-agent = {
+    overrideStrategy = "asDropin";
+    wantedBy = ["graphical-session.target"];
+  };
+
   # 4. Mandatory OS Spoofing: Convince Intune's inventory check that this machine runs Ubuntu 24.04 LTS
   environment.etc."os-release".text = pkgs.lib.mkForce ''
     NAME="Ubuntu"

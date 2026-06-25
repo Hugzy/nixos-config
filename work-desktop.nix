@@ -51,5 +51,17 @@ in {
 
   networking.hostName = "work-desktop";
 
+  # Hyprland doesn't activate the systemd graphical session on its own. This
+  # wrapper target is started from hyprland.conf (exec-once) and BindsTo
+  # graphical-session.target, bringing it up so user units that depend on it
+  # run (e.g. Intune's intune-agent.timer). graphical-session.target itself
+  # refuses manual start, hence the wrapper.
+  systemd.user.targets.hyprland-session = {
+    description = "Hyprland session";
+    bindsTo = ["graphical-session.target"];
+    wants = ["graphical-session-pre.target"];
+    after = ["graphical-session-pre.target"];
+  };
+
   use-home-manager.enable = true;
 }
