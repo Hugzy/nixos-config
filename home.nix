@@ -46,6 +46,7 @@ in {
     envsubst
     bluetui
     #obsidian
+    google-chrome
   ];
 
   # basic configuration of git, please change to your own
